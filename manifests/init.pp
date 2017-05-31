@@ -3,6 +3,14 @@
 # Configure NTP on windows when not being managed by a windows domain, eg for
 # DMZs
 #
+# @example use the default NTP server
+#   include windows_ntp
+#
+# @example use a specific NTP server
+#   class { "ntp":
+#     server => "nz.pool.ntp.org",
+#   }
+#
 # @param server NTP server to sync time from
 class windows_ntp(
     $server = "pool.ntp.org",
