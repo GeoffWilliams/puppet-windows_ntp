@@ -7,7 +7,7 @@
 #   include windows_ntp
 #
 # @example use a specific NTP server
-#   class { "ntp":
+#   class { "windows_ntp":
 #     server => "nz.pool.ntp.org",
 #   }
 #
