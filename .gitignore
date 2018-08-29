@@ -7,3 +7,4 @@ Puppetfile.lock
 /pkg
 .pdqtest
 .Puppetfile.pdqtest
+.idea

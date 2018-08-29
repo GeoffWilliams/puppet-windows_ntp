@@ -5,20 +5,33 @@
 
 **Classes**
 
-* [`windows_ntp`](#windows_ntp): Windows_ntp  Configure NTP on windows when not being managed by a windows domain, eg for DMZs
+* [`windows_ntp`](#windows_ntp): Configure NTP on Windows
 
 ## Classes
 
 ### windows_ntp
 
-Windows_ntp
+Configure NTP on Windows when not being managed by a windows domain, eg for
+DMZs.
 
-Configure NTP on windows when not being managed by a windows domain, eg for
-DMZs
+You must specify an NTP server to sync from in the `server` parameter for the
+module to configure your system. Some common public NTP servers are:
+  * time.windows.com
+  * pool.ntp.org
+
+* **See also**
+https://support.microsoft.com/en-us/help/262680/a-list-of-the-simple-network-time-protocol-sntp-time-servers-that-are
+http://support.ntp.org/bin/view/Servers/WebHome
 
 #### Examples
 
-##### use the default NTP server
+##### Hiera data
+
+```puppet
+windows_ntp::server: "time.windows.com"
+```
+
+##### use the default NTP server (data from Hiera)
 
 ```puppet
 include windows_ntp
@@ -38,9 +51,9 @@ The following parameters are available in the `windows_ntp` class.
 
 ##### `server`
 
-Data type: `Any`
+Data type: `Optional[String]`
 
 NTP server to sync time from
 
-Default value: "pool.ntp.org"
+Default value: `undef`
 
